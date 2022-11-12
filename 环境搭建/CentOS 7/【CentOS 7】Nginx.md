@@ -73,9 +73,9 @@
    
    [Service]
    Type=forking
-   ExecStart=/usr/local/tengine/sbin/nginx
-   ExecReload=/usr/local/tengine/sbin/nginx -s reload
-   ExecStop=/usr/local/tengine/sbin/nginx -s quit
+   ExecStart=/usr/local/nginx/sbin/nginx
+   ExecReload=/usr/local/nginx/sbin/nginx -s reload
+   ExecStop=/usr/local/nginx/sbin/nginx -s quit
    PrivateTmp=true
    
    [Install]

@@ -11,9 +11,10 @@ fi
 
 NAME=$1
 
-nohup java -Duser.timezone=Asia/Shanghai -Xms512m -Xmx1024m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:NewRatio=1 -XX:SurvivorRatio=30 -XX:+UseParallelGC -XX:+UseParallelOldGC -jar -Dspring.profiles.active=prod --server.port=8080 $NAME.jar  > ./logs/$NAME.log 2>&1 &
+nohup java -Duser.timezone=Asia/Shanghai -Xms512m -Xmx1024m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:NewRatio=1 -XX:SurvivorRatio=30 -XX:+UseParallelGC -XX:+UseParallelOldGC -jar -Dspring.profiles.active=prod $NAME.jar --server.port=8080  > ./logs/$NAME.log 2>&1 &
 
 echo $NAME START SUCCESS.
+data-generator
 ```
 
 ```bash
